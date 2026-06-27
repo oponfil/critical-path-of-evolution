@@ -16,7 +16,5 @@ Thumbs.db
 *.swp
 *~
 
-# Local verification script
-verify_calculations.py
 __pycache__/
 *.py[cod]
