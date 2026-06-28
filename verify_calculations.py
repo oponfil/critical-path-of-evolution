@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Numerical verification of calculations in critical_path_ru.tex (GHZ ring model)."""
+"""Numerical verification of calculations in critical_path_evolution_ru.tex (GHZ ring model)."""
 
 from __future__ import annotations
 
@@ -36,7 +36,7 @@ V_GHZ = math.pi * (R_MAX_LY**2 - R_MIN_LY**2) * H_LY
 
 GAMMA43 = math.gamma(4 / 3)
 
-# Expected table values from critical_path_ru.tex
+# Expected table values from critical_path_evolution_ru.tex
 TABLE1 = [
     (0.015, 417, 1964),
     (0.020, 314, 1477),

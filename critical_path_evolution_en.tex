@@ -1,0 +1,512 @@
+% !TEX root = critical_path_evolution_en.tex
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{mathptmx}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{indentfirst}
+\usepackage[hidelinks]{hyperref}
+
+\title{\textbf{The Critical Path of Evolution}}
+\author{%
+  Oleg Ponfilenok\\[0.35em]%
+  {\normalsize Independent researcher; \href{mailto:ponfil@gmail.com}{ponfil@gmail.com}}%
+}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The evolution of life is treated as the traversal of $N \sim 10^{14}$ small, high-probability steps of increasing complexity, with mean step time $\mu$~--- a critical path from the thermal gate of the cosmic microwave background to a technological civilization over a time $T \approx 13.8$~Gyr. When the step times are independent, the concentration of their sum compresses the relative spread of exit times as $1/\sqrt{N}$; within the model this yields a dispersion $\sigma = \sqrt{\mu T}$. We show that the observed absence of ``loud'' civilizations (cosmic silence) gives an estimate of the interplanetary dispersion of exit times $\sigma \approx 800$--$1400$~yr~--- of the order of the horizon of the transition to detectability; from this $\sigma$ follows $\mu \approx 25$--$75$~min, which coincides with the generation time of microorganisms. The same silence constrains the Galactic population to $n \sim 10^4$--$10^5$ civilization-bearing planets, in agreement with astrophysical estimates of the number of Earth-like habitats. Two properties of the critical path~--- its progression under a local surplus of resources and the kinematic uniqueness of the fastest route~--- make its parameters approximately universal and ensure a synchronous tempo for the development of life; cosmic silence indicates that this route is realized through the carbon--organic chemistry of life of our type. A logical consequence of the same picture is the convergence of civilization form: the carriers of technological civilizations are expectedly close in \emph{functional} plan to humanoids, although the details of morphology may differ.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Fermi paradox; critical path of evolution; simple-steps model (versus ``hard steps''); synchronization of the emergence times of intelligence; MEPP; convergent evolution; Galactic population; SETI
+
+%%% ===================================================================
+\section{Introduction}
+%%% ===================================================================
+
+The Fermi paradox~--- the absence of observable technosignatures despite the expected habitability of the galaxy~--- is usually discussed through rare ``hard steps'' of evolution (Carter's model~\cite{Carter1983}) or through anthropic arguments about the observer's early position (the grabby-aliens model~\cite{Hanson2021}). This work proposes a different, strictly Copernican approach: the evolution of life from the birth of the Universe to a technological civilization proceeds along a \emph{critical path}~--- the rate-limiting, fastest route of increasing complexity (by analogy with the critical-path method in project management), rather than along a set of rare, improbable transitions. This is \textbf{the opposite} of Carter's notion of ``critical steps'': critical steps are few and hard; a critical path consists of many simple steps, and only the speed of the rate-limiting route matters.
+
+The preference for simple steps is motivated by a literal reading of Darwin's \emph{natura non facit saltum}~\cite{Darwin1859}: nature makes no leaps; increasing complexity is a chain of small changes rather than rare ``hard'' transitions. A further motivation is an asymmetry in the empirical evidence: the ``hard-steps'' hypothesis has itself never been proven~--- indecomposability has not been rigorously shown for any of the proposed candidates~--- whereas under detailed study specific candidates (eukaryogenesis, the origin of life) repeatedly break down into chains of cooperative, high-probability substeps~\cite{Mills2025}. The uniqueness of an origin does not by itself prove difficulty: an incumbent effect (the first successful lineage precludes repeat attempts), niche closure by the environment, and the unobservability of extinct alternative lineages are all possible.
+
+Thermodynamically, this can be understood as the selection of the most dissipative route: in an open system with a surplus of local resources, the maximum entropy production principle (MEPP~\cite{Martyushev,MartyushevSeleznev2006,Kleidon2010,Vallino2010}) singles out the path that most rapidly converts available free energy into stable complexity. The critical path is therefore not only the kinematically fastest but also the physically most dissipative route. At the same time, under a surplus of resources, increasing complexity proceeds in parallel along many admissible routes constrained by physics and chemistry; MEPP and the kinematic minimum of the total time single out among them the unique fastest one~--- the critical path. Synchronization and convergence of form pertain only to its leading branch, not to the entire phylogenetic tree (Sec.~\ref{sec:time_form}).
+
+We treat the evolution from the thermal gate of the cosmic microwave background to a technological civilization as a \emph{single} chain of $N$ very many simple steps. When many independent steps are summed, the mean time grows as $N$, whereas the spread grows only as $\sqrt{N}$; hence the \emph{relative} spread of exit times is compressed as the number of steps grows: different planets arrive at civilization almost simultaneously~--- this is precisely \textbf{synchronization}. It rests on two properties of the critical path: it is \emph{unique} and proceeds at a \emph{universal} tick $\mu$ on the speed plateau (under a surplus of resources the tempo is set by chemistry, not by the environment). The quantitative derivation of these properties is given in Sec.~\ref{sec:steps}, and the order-of-magnitude estimate of $\sigma$ from silence in Sec.~\ref{sec:inversion}; the main goal is to show the qualitative mechanism of synchronization rather than a precise calibration of the timescales.
+
+In essence this is a different view of evolution~--- not as a series of accidents but as a regularity: an individual step is random, but the concentration of the sum of an enormous number of them makes the resulting path practically deterministic, and life appears not as a lottery but as a \emph{project} with a single fastest route of increasing complexity. Because this route is kinematically unique, the model assumes as a consequence the convergence not only of exit times but also of the \emph{form of civilization}: technological civilizations on other planets are \emph{expectedly} close in \emph{functional} plan to humanoids (Sec.~\ref{sec:time_form}).
+
+The closest ally to the qualitative thesis is the work of Mills et al.~\cite{Mills2025} (``no hard steps''); the question of the dispersion of the emergence times of intelligence was previously raised by Hair~\cite{Hair2011}, but with the opposite conclusion: he emphasized a \emph{large} spread and an enormous temporal advantage of the most ancient civilizations, whereas from the sum of independent steps we obtain a narrow, synchronous peak. The present work shares the conclusion that ``there are no hard steps'' but adds a quantitative framework of the sum of sequential steps and an estimate of $\sigma$ from silence (Sec.~\ref{sec:inversion}). From the grabby-aliens model~\cite{Hanson2021} we differ by abandoning the power law of hard steps and the anthropic premise: synchrony follows from the concentration of the sum of independent steps (additivity of variance) and the local convergence of the cosmic phase. A different reading of the silence is given by Sandberg, Drexler, and Ord~\cite{Sandberg2018}: the paradox ``dissolves'' statistically~--- under an honest accounting of the multi-order-of-magnitude uncertainty in the parameters of the Drake equation, the probability of being alone is large. But the main source of that uncertainty is the assumption of a possibly extremely improbable (hard-step) abiogenesis; our rejection of hard steps cuts off this tail, the uncertainty shifts toward ``life is not rare,'' and the need to explain the silence returns~--- we answer it with synchrony. Observationally, the models are distinguishable by the shape of the distribution of exit times~--- a narrow synchronous peak versus the broad tail of ``hard steps.''
+
+%%% ===================================================================
+\section{The critical path from a model of simple steps}
+\label{sec:steps}
+%%% ===================================================================
+
+\textit{This section provides the quantitative derivation: it formalizes the dispersion of exit times as the concentration of the sum of a large number of independent steps and justifies the universality of the parameters of the critical path.}
+
+\subsection{Assumptions and concentration of the sum of steps}
+\label{sec:concentration}
+
+Postulate: evolutionary complexification proceeds through $N$ small, high-probability steps (after Darwin~\cite{Darwin1859}, \emph{natura non facit saltum}; not through rare ``hard'' ones, Sec.~\ref{sec:planetary_steps}). The exit time is $T_{\mathrm{exit}} = \sum_{i=1}^{N} t_i$, and the steps are independent. The individual steps \emph{need not} be equal in duration: the $i$-th has its own mean $\mu_i$ and variance $\sigma_i^2$; $\mu \equiv \langle t_i\rangle = T/N$ is the \emph{mean} step time along the chain, and $\sigma_{\mathrm{s}}^2 \equiv \langle\sigma_i^2\rangle$ is the mean per-step variance (Sec.~\ref{sec:heterogeneity}).
+
+The core of the mechanism is the \textbf{additivity of the mean and the variance} (the Bienaymé identity): $\mathbb{E}[T_{\mathrm{exit}}] = \mu N$, $\mathrm{Var}(T_{\mathrm{exit}}) = N\sigma_{\mathrm{s}}^2$, whence $\sigma = \sigma_{\mathrm{s}}\sqrt{N}$ and the relative spread $\sigma/T = c_v/\sqrt{N}$ with $c_v = \sigma_{\mathrm{s}}/\mu$. For the concentration itself, independence of the steps and finiteness of $c_v$ suffice; normality of the single-step distributions is not required (normality of the sum is invoked only in Sec.~\ref{sec:silence_sigma}). The special case $c_v \approx 1$ gives $\sigma = \sqrt{\mu T}$; the numerical inversion to $\mu$ (Sec.~\ref{sec:inversion}) rests on it, but the conclusion about concentration does not. The effect of the heterogeneity of $\mu_i$ on $\sigma$ reduces to a factor of order unity if no single step dominates (Sec.~\ref{sec:heterogeneity}).
+
+The concentration relies on two weak requirements: (1)~the number of steps $N$ is large; (2)~no single step dominates $\sum_i\sigma_i^2$~--- there is no indecomposable ``hard'' step with a time of order the target $\sigma$ (Sec.~\ref{sec:planetary_steps}). In the reference form $\sigma = \sqrt{\mu T}$ with $T \approx 13.8$~Gyr~--- the total time from the CMB thermal gate (Sec.~\ref{sec:common_start}); the numerical values of $\sigma$ (Sec.~\ref{sec:silence_sigma}) and $\mu$ (Sec.~\ref{sec:mu_from_sigma}) are calibrated from silence.
+
+\subsection{Sensitivity of the dispersion to step heterogeneity}
+\label{sec:heterogeneity}
+
+For independent steps the variance of the exit time equals the sum of the per-step variances:
+\begin{equation}
+\sigma^2 = \mathrm{Var}(T_{\mathrm{exit}}) = \sum_{i=1}^{N}\sigma_i^2,
+\label{eq:varsum}
+\end{equation}
+
+To analyze the heterogeneity we introduce two parameters. Step $i$ has mean $\mu_i$ and intra-step spread $\sigma_i = c_v\mu_i$ with a common $c_v = \sigma_{\mathrm{s}}/\mu$; the means $\mu_i$ along the chain have mean $\mu \equiv T/N$ and coefficient of variation $CV_\mu \equiv \mathrm{std}(\mu_i)/\mu$ (the relative spread of step durations). From~\eqref{eq:varsum} it follows that:
+\begin{equation}
+\boxed{\;\sigma = c_v\,\sqrt{1+CV_\mu^{2}}\;\sqrt{\mu\,T}\;}
+\label{eq:sigma_general}
+\end{equation}
+In~\eqref{eq:sigma_general} two contributions are separated: the within-step stochasticity ($c_v$, Sec.~\ref{sec:inversion}) multiplies $\sigma$ linearly, while the spread of $\mu_i$ between steps ($CV_\mu$) enters as the factor $\sqrt{1+CV_\mu^2}$. Relative to the reference $\sigma_0=c_v\sqrt{\mu T}$ (the case of equal $\mu_i$, $CV_\mu=0$): for $CV_\mu=1$, when the typical deviation of a step's duration is comparable to its mean, $\sigma/\sigma_0=\sqrt{2}\approx1.4$. The dependence is sublinear in $CV_\mu$, so a moderate spread of the durations of the fast steps shifts $\sigma$ only weakly.
+
+More significant is the contribution of the slowest step. If $\mu_{\max}\gg\mu$, then
+\begin{equation}
+\sigma \approx \sqrt{\big(\sqrt{\mu T}\,\big)^2 + (c_v\mu_{\max})^2}.
+\end{equation}
+The sum of $N\sim10^{14}$ fast steps gives a floor of $\sim10^3$~yr (Sec.~\ref{sec:mu_from_sigma}); a slow step adds in quadrature. Domination sets in when $c_v\mu_{\max}\gtrsim\sigma\approx10^3$~yr, i.e.\ $\mu_{\max}\gtrsim\sqrt{N}\,\mu\approx10^{7}\mu$: an individual step may be $\sim10^{7}$ times slower than the mean ($40$~min $\to$ up to $\sim10^3$~yr) without dominating the sum; for $\mu_{\max}\gtrsim10^3$~yr it determines $\sigma$. Eukaryogenesis as a single indecomposable step ($\mu_{\max}\sim2$~Gyr) would give $\sigma\sim2\times10^9$~yr~--- six orders of magnitude above the observed interplanetary dispersion (Sec.~\ref{sec:eukaryo}).
+
+The interplanetary $\sigma\approx10^3$~yr is set above all by the number of steps $N$ and the time of the slowest step $\mu_{\max}$; the spread of the durations of the fast steps ($CV_\mu$) contributes only a weak factor. The condition for concentration is the absence of an indecomposable ``hard'' step with $\mu_{\max}\gtrsim10^3$~yr; its verification for the planetary phase is in Sec.~\ref{sec:planetary_steps}.
+
+\subsection{Decomposition of hard steps into simple ones}
+\label{sec:planetary_steps}
+
+On the planetary segment the following risk remains. Long planetary epochs (for example, the $\sim 2$~Gyr before eukaryotes) are not in themselves anomalous: they are simply \emph{long chains} of ordinary ticks (a large number of steps $N$) that give the same law $\sigma = \sqrt{\mu T}$. An anomalous contribution to the interplanetary spread would arise only from an \textbf{indecomposable} slow planetary step~--- a single transition with its own time $\gtrsim10^3$~yr (the domination threshold from Sec.~\ref{sec:heterogeneity}) that cannot be represented as a chain of high-probability substeps and that is not common to all planets.
+
+This is, in another form, Carter's ``hard-steps'' hypothesis~\cite{Carter1983}: rare, genuinely indecomposable transitions with a large variance of the waiting time. But over more than 40 years of discussion not a single concrete step has been proven indecomposable; the hypothesis itself rests on assumptions that a recent reassessment calls dubiously justified both anthropically and evolutionarily~--- the ``removed-ladder'' effect (successful lineages displace competitors, masking their independent origin), niche displacement by environmental change, and the fundamental unobservability of extinct independent lineages~\cite{Mills2025}. The current trend of research is exactly the opposite: each candidate ``hard step,'' on closer inspection, decomposes into a chain of simple ones~--- the origin of eukaryotes via the Asgard archaea and their cultured representative \emph{Prometheoarchaeum syntrophicum}~\cite{Spang2015,Zaremba2017,Imachi2020}, the syntrophic and hydrogen hypotheses of symbiogenesis~\cite{Martin1998,LopezGarcia2020}, actin homologs in Lokiarchaeota~\cite{Spang2015}, the observed actin cytoskeleton in an Asgard archaeon~\cite{Rodrigues2023}, and the new phylogenomic reconstructions of 2025--2026~\cite{Tobiasson2026,Speijer2025,BravoArevalo2025}.
+
+Thus the entire burden falls on the decomposability of the planetary steps: as long as no provably indecomposable step has been exhibited, the model's postulate has empirical support but not proof. The eukaryogenesis test (Sec.~\ref{sec:eukaryo}) remains decisive precisely because it is the last serious candidate for a ``hard step'' for which no commonly accepted mechanistic model yet exists.
+
+\subsection{The cascade model: directionality and the growth of dissipation}
+\label{sec:cascade}
+
+Complexification is a cascade of transitions over energy rungs, with Helmholtz free energy $\Delta F = \Delta U - T\Delta S$. Each rung~--- a single step~--- is a metastable state with memory (retention time $\tau \sim \exp(\Delta U/kT)$); entropy production effectively lowers the barriers, making the cascade climb traversable.
+
+\textbf{Directionality} arises from an asymmetry: as complexity grows the system grows $\Rightarrow$ more degrees of freedom $\Rightarrow$ the density of microstates increases $\Rightarrow$ a transition ``to the right'' is entropically more favorable (the phase volume of more complex states is larger). The asymmetry manifests itself to a greater degree in the \textbf{height} of the step than in its \emph{tempo}: each step to the right is accompanied by a larger increment of entropy $\Delta S$ and greater dissipation of free energy. Together with replication (the ratchet, Sec.~\ref{sec:ratchet}) this gives a statistical drift toward complexity along the arrow of time (teleonomy; cf.~Lotka~\cite{Lotka1922}, MEPP~\cite{Martyushev}, the classical thermodynamic justification~\cite{SchneiderKay1994}, dissipative adaptation in self-assembly~\cite{England2015}).
+
+Entropy production accelerates ``to the right'' for two reasons: (i)~\textbf{expansion}~--- replication increases the number of systems at the leading front exponentially; (ii)~more complex metastable structures require a larger specific influx of free energy. Quantitatively, this tendency is captured by the independently measurable \emph{free-energy rate density} $\Phi_m$ (erg$\cdot$s$^{-1}\cdot$g$^{-1}$), which grows by orders of magnitude along the ladder: star $\sim1$, planet $\sim10^2$, plant $\sim10^3$, animal $\sim10^4$, brain $\sim10^5$, technological society $\sim10^6$~\cite{Chaisson2011}. The \emph{mean} time of the elementary tick $\mu$ itself (one replication cycle, one act of heritable memory) is bounded from below by the biochemistry of copying heritable memory~--- hence $\mu \approx$ the generation time (Sec.~\ref{sec:resource_threshold}). The systematic difference of the \emph{mean} ticks between the major phases~--- abiotic, unicellular, and multicellular (Sec.~\ref{sec:sex})~--- does not abolish the lower bound on $\mu$ at the microbial-speed plateau, but it shifts the path estimate from the single-phase inversion by up to a factor of a few.
+
+\subsection{The biological ratchet}
+\label{sec:ratchet}
+
+In a single mechanical system both forward and backward transitions are seen. In biology, backward motion (extinction, reductive evolution) occurs constantly, but at the level of individual lineages, and these lineages disappear, leaving no observer.
+
+The key amplifier is \textbf{replication with memory}: a successful rung is copied, and the number of systems on it grows exponentially. For the whole population to roll back, an independent reversal would have to occur in an enormous number of copies at once~--- a negligibly small probability. Replication turns the weak thermodynamic asymmetry into a practically irreversible \textbf{ratchet}~--- the leading front of complexity does not roll back (cf.~the biological law of irreversibility, Dollo's law~\cite{Dollo1893,Gould1970}). Thermodynamically this ratchet can be illustrated by Jeremy England's concept: the division of a bacterium into two parts is a relatively simple process, but the spontaneous fusion of the two resulting halves back into one functional bacterium is statistically and thermodynamically improbable, owing to the dissipation of heat and the enormous difference in the entropy of the states~\cite{England2013}.
+
+\subsection{The speed plateau and the resource threshold}
+\label{sec:resource_threshold}
+
+Two conditions for a universal tick $\mu$ on the microbial steps~--- a \emph{speed plateau} of adaptation and a negligible \emph{resource threshold}~--- are justified below on population-genetic and energetic grounds.
+
+In an asexual population many beneficial mutations compete simultaneously: while one lineage is being fixed, lineages of comparable fitness are discarded~--- this is \emph{clonal interference}. The rate of adaptation grows with the population size $N_c$ and the supply of beneficial mutations $U_b$ only \textbf{logarithmically}, and at large $N_c$ it \textbf{saturates} (the Gerrish--Lenski model~\cite{GerrishLenski1998}, travelling-wave theory~\cite{DesaiFisher2007,ParkKrug2007}; experimentally, a ``speed limit'' independent of the mutation supply~\cite{deVisser1999,Lang2013}). Saturation sets in at $N_c\,U_b \gtrsim 1$, i.e.\ at $N_c \gtrsim 10^{6}$ cells ($U_b \sim 10^{-6}$); further growth of $N_c$ barely changes the rate~--- fitness does not have time to be transmitted through successive sweeps. From below it is limited by a \emph{biochemical floor}~--- the minimum division time ($\mu_{\min}\approx$ the generation time, $\sim 20$~min for \emph{E.~coli}; the tick is pressed precisely against this floor, since the critical path follows the fastest lineage~--- the first success among a multitude of parallel attempts).
+
+To estimate the energy budget of the critical path we take the \textbf{evolutionary front of maximum tempo}~--- a population already on this plateau. The reference is a single flask of the Lenski long-term experiment (LTEE~\cite{Lenski2017}): 10~mL, $\sim 5 \times 10^{8}$ cells at the daily population peak ($\sim 5 \times 10^{7}$~cells/mL). This is $\sim 2$--$3$ orders of magnitude \emph{above} the threshold $N_c \sim 10^{6}$; the effective size $N_e \approx 3 \times 10^{7}$ is also deep on the plateau. This is precisely why the LTEE observes the maximum kinetic tempo~--- all 12 lines follow almost the same fitness curve~\cite{Wiser2013,Lenski1994}~--- and serves as the correct scale of the ``leading front.'' Its energetics (using $\sim 0.57$~pW per cell in the exponential phase~\cite{Deng2021ATP}):
+\begin{itemize}
+\item power $\approx 3 \times 10^{-4}$~W; $\dot{S}_{\mathrm{front}} \approx 10^{-6}$~W/K.
+\end{itemize}
+Planet (Earth): $\dot{S}_{\mathrm{planet}} \approx 4.6 \times 10^{14}$~W/K; $\dot{S}_{\mathrm{bio}} \approx 4 \times 10^{11}$~W/K; prokaryotes $\sim 5 \times 10^{30}$.
+
+The front/planet ratio: $\dot{S}_{\mathrm{front}}/\dot{S}_{\mathrm{planet}} \approx 2 \times 10^{-21}$; cells $\approx 10^{-22}$; area~--- the front needs only $\sim 2$~cm$^2$ ($\sim 3 \times 10^{-19}$ of the planet's surface). This removes the \emph{energetic and resource} limitation of the path by the planet's global conditions.
+
+\subsection{Local oases of evolution on planets}
+\label{sec:applicability_bounds}
+
+The concept of the critical path enters into a substantive debate with the hypothesis of ``global environmental gating,'' advocated in particular in the work of Mills et al.~\cite{Mills2025}. On their view, the major evolutionary transitions (eukaryogenesis, multicellularity) were delayed not because of intrinsic difficulty but in anticipation of the planet's maturation (the attainment of a global oxygen threshold, climatic stabilization, etc.). Such a mechanism would inevitably lead to a significant spread of civilizations' exit times, since the planetary timers (the rate of $\mathrm{O_2}$ accumulation) are unique to each planet.
+
+Within our model, geology and planetary timers are not restraining gates, owing to two empirically supported factors:
+\begin{enumerate}
+   \item \textbf{Oxygen oases.} Biochemical evolution does not wait for a global change of the planet but proceeds in local foci with a surplus of resources. Geological data show that shallow-water ``oxygen oases,'' created by local communities of cyanobacteria, existed for hundreds of millions of years before the Great Oxidation Event (GOE) on an otherwise fully anoxic planet~\cite{Riding2014,Ostrander2019}. The evolutionary steps requiring oxygen proceeded inside these local oases at maximum kinetic speed, while the subsequent global saturation of the planet led only to the spatial dispersal of already-formed life forms.
+   \item \textbf{The order-of-appearance test (Mills~2014 versus Mills~2025).} The gating hypothesis asserts that the appearance of animals was strictly limited by the rise of oxygen. However, independent measurements of the requirements of the earliest multicellular organisms (using modern sponges as an example) show that they can survive at oxygen concentrations of only $0.5$--$4.0\%$ of the present-day level~\cite{Mills2014}. Such concentrations were reached on Earth long before the actual appearance of animals. The fact that animals arose with a significant time lag after crossing this threshold indicates that oxygen was not the limiting stop-factor. Evolution proceeded at its own kinetic tempo of biological transitions.
+\end{enumerate}
+
+\label{sec:plateau}
+On the speed plateau the step tick is set by chemistry ($\mu_{\min,i}$ for step $i$), not by the environment, and is the same on all planets (Sec.~\ref{sec:planetary_spread}); the resource threshold is negligible (Sec.~\ref{sec:resource_threshold}), and evolution proceeds in local oases rather than awaiting the planet's global maturation. The planets need not be identical: it suffices that at \emph{every} moment there be at least one niche on the plateau and the possibility of rapid expansion between oases; different stages may require different places, so the critical path relies on colonization and migration between oases.
+
+As one moves ``to the right'' along the cascade of complexification (Sec.~\ref{sec:cascade}), the volume of resources consumed and the energy consumption grow monotonically (the height of the rung and the entropy production increase), while the apparent tempo of evolution accelerates through expansion. We therefore relate the thesis ``a local oasis is enough'' primarily to the early steps, with a small energy budget of the front relative to the planet (Sec.~\ref{sec:resource_threshold}); a quantitative tie to the Kardashev scale was not made here. Already at our level ($K \approx 0.73$) a civilization requires a substantial fraction of the planetary energy pool; thereafter consumption will only increase (Sec.~\ref{sec:pred_kardashev}).
+
+For the \emph{late} steps that require global conditions, the planetary factor may remain significant: for example, the emergence of large, active predators with a high metabolism that physically cannot exist within the bounds of a local oasis~\cite{Knoll2014}. In such rare links the critical path passes to the planetary scale~--- this is a natural boundary of the model's applicability: the tick $\mu = \mu_{\min}$ on the speed plateau and independence from the global environment are well justified for the overwhelming majority of steps and of the path's duration, but not for all late transitions without reservations.
+
+\subsection{Suppression of the planetary common mode}
+\label{sec:planetary_spread}
+
+The reference form $\sigma = \sqrt{\mu T}$ (Sec.~\ref{sec:concentration}) is legitimate only when the interplanetary spread of exit times is exhausted by the \emph{independent} per-step stochasticity. By the law of total variance, if the mean plateau tick $\mu_{\min}$ itself varies between planets with relative spread $\delta \equiv \mathrm{std}_{\mathrm{pl}}(\mu_{\min})/\mu_{\min}$, then
+\begin{equation}
+\sigma^2_{\mathrm{interpl}}
+  = \underbrace{N\sigma_{\mathrm{s}}^2}_{\text{independent}}
+  + \underbrace{T^2\,\delta^2}_{\text{common mode}}.
+\label{eq:total_variance}
+\end{equation}
+The first term coincides with Sec.~\ref{sec:concentration} and gives $\sigma = c_v\sqrt{\mu T}\sim10^3$~yr (Sec.~\ref{sec:silence_sigma}). The second is the common-mode term: it is \emph{not} suppressed as $1/\sqrt{N}$ and dominates already at $\delta \gtrsim c_v/\sqrt{N}\sim10^{-7}$, turning $\sigma \approx T\,\delta$. Synchrony therefore requires the plateau tick to be interplanetarily invariant to this precision. Below we show that the invariance \emph{is ensured by selection toward the optimum} rather than postulated: the planetary spread enters not as a continuous slowing of the tick but as a binary selection into the cohort.
+
+The planetary ``common mode'' would destroy the concentration of the sum of steps: it would arise if the interplanetary spread were set by the planet's conditions (temperature, composition, climate), which are common to all of its steps and therefore correlate them with one another. By construction the critical path is set not by these but by the \emph{universal properties of the chemical elements}: it always proceeds in local oases under a surplus of resources, on the plateau $\mu = \mu_{\min}$ (Sec.~\ref{sec:applicability_bounds}). There is no planet-wide slowing factor; in formula~\eqref{eq:total_variance} only the independent per-step stochasticity should remain~--- exactly the one for which $\sigma/T = c_v/\sqrt{N}$ holds.
+
+Three mechanisms keep the planetary contribution to $\delta$ below the threshold~\eqref{eq:total_variance}. \textbf{Temperature}~--- a continuous field: on a planet with a temperature gradient there always exists a place (latitude, depth, vicinity of a source) where $T = T_{\mathrm{opt}}$ \emph{exactly}; the oasis settles onto the maximum of the rate independently of the mean climate, and the temperature contribution to $\delta$ \emph{vanishes} rather than being suppressed quadratically. \textbf{Intracellular composition} (pH, ionic strength, concentrations of substrates and cofactors) is normalized by active transport and bioaccumulation: the cell concentrates the needed species up to the optimum, \emph{decoupling} the specific tick from the bulk abundance in the reservoir. The universal nucleosynthesis of preceding generations of stars guarantees the presence of organogenic and cofactor elements everywhere in the disk (Sec.~\ref{sec:local_conv})~--- so there is always something to concentrate; meanwhile the typical $\sim 2$--$3$-fold spread of the \emph{ratios} of these elements in the disk is not carried over to the intracellular optimum. \textbf{Catalyst}~--- the kinematic uniqueness (Sec.~\ref{sec:uniqueness}) fixes, at each rate-limiting step, not only the number of steps but also the \emph{fastest chemistry} itself. On the speed plateau the rate-limiting step is pressed against the \textbf{physical ceiling}~--- the diffusion ceiling or the one set by the energetics of the transition state (empirically $k_{\mathrm{cat}}/K_m\sim10^{8}$--$10^{9}$~M$^{-1}$s$^{-1}$, the diffusion limit~\cite{Bar-Even2011}); it is determined by the constants and chemistry of the reaction, not by the planet, so $\mu_{\min}$ is interplanetarily invariant to first order and $\delta$ remains below the threshold~\eqref{eq:total_variance}.
+
+The boundary of applicability is the same as in Sec.~\ref{sec:resource_threshold}: if on a planet there is \emph{not a single} niche reaching the optimum at a given moment~--- the required element is absent altogether (not merely less abundant), there is no liquid-phase medium at $T_{\mathrm{opt}}$, the resource pool is exhausted~--- the planet does not follow the critical path at maximum speed and \textbf{drops out of the synchronized cohort} (Sec.~\ref{sec:bimodal}).
+
+\subsection{Uniqueness of the critical path}
+\label{sec:uniqueness}
+
+In an open system, complexification proceeds in parallel along many routes~--- all those reachable under the given resources and conditions. In principle the admissible paths are set by the physics and chemistry of the Universe; in practice their list is narrowed by the local availability of substances, energy, and conditions. Where resources are abundant and the spectrum of conditions is sufficient (Sec.~\ref{sec:resource_threshold}, Sec.~\ref{sec:plateau}), the resource constraint is removed and the entire theoretically possible set of routes is available. On this set the maximum entropy production principle (MEPP~\cite{Martyushev,MartyushevSeleznev2006,Kleidon2010,Vallino2010}) selects the most dissipative trajectories; since the growth of complexity \emph{is} the growth of entropy production (Sec.~\ref{sec:cascade}), the most dissipative coincide with the fastest in complexification. Among them there exists a unique minimum of the total time~--- exact coincidences of speeds have measure zero; this is the \emph{critical path}.
+
+It is important to note here that the critical path is by definition not a path tied to a specific chemistry, but \textbf{the maximum over speed among all possible routes} of complexification permitted by the physics and chemistry of the given Universe. Before reaching the loud phase the critical path can be only one: if there existed a chemical basis realizing a faster route, we would already be observing its result~--- a loud civilization grown along that faster path. Since no loud civilizations are observed (cosmic silence), the carbon--organic chemistry on which life of our type develops coincides with the critical path of the given Universe.
+
+Alternative forms of life on a different chemical basis are theoretically possible, but they do not form their \emph{own} critical paths~--- by construction they are simply slower routes that do not attain critical status. They too may ultimately lead to the emergence of intelligence and civilizations, but over substantially longer timescales. The critical path itself is set not by the choice of chemistry but by the fundamental constants and parameters of the Universe (the speed of light, the gravitational and fine-structure constants, particle mass ratios, etc.): a faster critical path could in principle exist only in a different Universe with different physical constants.
+
+\textbf{Kinematic uniqueness fixes the number of steps ($N = \mathrm{const}$).} What looks like a single ``key transition'' (eukaryogenesis, multicellularity, etc.) is, on the critical path, a long chain of such steps. The steps are therefore very many~--- $N \sim 10^{14}$ (Sec.~\ref{sec:inversion})~--- but their number is fixed. The critical path is defined not by the minimum \emph{number} of steps but by the \textbf{minimum of the total time}: it is the shortest-in-time path to the same level of development among all possible alternative routes~--- from prebiotic chemistry to a given threshold of complexity (we take the entry into the loud phase~--- Type~II on the Kardashev scale; Sec.~\ref{sec:loud_time}). Within the fundamental laws of physics and chemistry, such a fastest route is kinematically unique and can be only one. Any alternative routes are substantially slower: they have more steps, the steps themselves may differ, and the total time is noticeably longer. Since the fastest path is physically unique~--- set by the fundamental constants of the Universe and not by the choice of chemistry~--- the number of steps $N$ on it is rigidly fixed and has no interplanetary spread ($\Delta N = 0$).
+
+\textbf{The critical path is one branch, not the whole tree.} The critical path is the \emph{single} leading line that carries, at each moment, the leading front of complexity and dissipation; retrospectively, its trace on Earth is the line of human ancestors (prokaryote $\to$ eukaryote $\to$ multicellular $\to$ \ldots $\to$ primate $\to$ technological civilization), not the whole of flora and fauna. Importantly, this line is defined \emph{not} teleologically (a specific species is not ``preset'' in advance) but as the route that holds, at each moment, the record for the rate of entropy production; retrospectively it coincides with the ancestors of the most dissipative state~--- the civilization. The overwhelming majority of the branches of the phylogenetic tree~--- other species, whole kingdoms~--- lie \emph{outside} the critical path: these are contingent offshoots (cf.\ Cit$^+$ in the LTEE, Sec.~\ref{sec:ltee}), which on different planets may differ arbitrarily. The model asserts universality and synchrony \emph{only} for the leading branch: it is the moment of a civilization's emergence that is synchronized, not the composition of the ecosystem. Accordingly, the convergence of civilization form (Sec.~\ref{sec:time_form}) too pertains only to this line~--- the accompanying biota on another planet may be entirely different.
+
+\subsection{The critical path under sexual reproduction}
+\label{sec:sex}
+
+In the multicellular phase the elementary \emph{genetic} tick is bounded from below by the generation time~--- months or years, not the minutes of the microbial phase. If one counts only sequential heritable mutations with $\mu_{\mathrm{gen}}\sim1$~yr against the background of a phase of duration $10^8$--$10^9$~yr, then by Sec.~\ref{sec:heterogeneity} this phase's contribution to $\sigma$ is $\sim\sqrt{T_{\mathrm{phase}}\mu_{\mathrm{gen}}}\sim10^4$~yr~--- an order of magnitude larger than the observed interplanetary dispersion of $\sim10^3$~yr.
+
+The model attributes this scale not to the calendar generation but to an \emph{effective} tick $\mu_{\mathrm{eff}}$: beneficial changes arise in different individuals simultaneously, and recombination assembles them into one lineage~\cite{Muller1932,HillRobertson1966,Colegrave2002}. In a single generation a genome can acquire several accumulated alleles at once~--- in calendar terms this is one overlapping interval rather than a sum of $n_{\mathrm{gen}}$ sequential waiting times; with $n_{\mathrm{gen}}$ increments assembled in parallel, $\mu_{\mathrm{eff}}\sim\mu_{\mathrm{gen}}/n_{\mathrm{gen}}$.
+
+Two regimes set the order of $n_{\mathrm{gen}}$. \textbf{Classical sweeps} limit the \emph{number of fixations}: recombination does not allow more than $\sim$one substitution per centimorgan to accumulate over $\sim200$ generations~\cite{WeissmanBarton2012}~--- tens of fixations per genome per generation, which is insufficient for $n_{\mathrm{gen}}\sim10^2$--$10^3$. \textbf{Polygenic adaptation} acts differently: complex traits shift through a coordinated change of frequencies at \emph{hundreds to thousands} of loci from standing variation~\cite{Pritchard2010,Boyle2017,Barghi2020}; the population mean changes durably, even though individual alleles are not fixed. This regime does not run into the sweep ceiling and gives $n_{\mathrm{gen}}\sim10^2$--$10^3$ loci changed in parallel per generation~--- enough for $\mu_{\mathrm{eff}}$ to be two orders of magnitude shorter than $\mu_{\mathrm{gen}}$ and for the phase's contribution to $\sigma$ to be of order $\sim10^3$~yr. Thus in the Phanerozoic the critical path proceeds by small parallel steps (\emph{natura non facit saltum}, Sec.~\ref{sec:concentration}) rather than by rare sweeps; the ratchet here acts at the level of the \emph{population-mean} phenotype. Part of the subgenerational increments (learning, culture, the Baldwin effect~\cite{Baldwin1896}, Sec.~\ref{sec:cascade}) converts quantitative shifts into more discrete heritable rungs. The quantitative share of such channels in the Phanerozoic is an open question (Sec.~\ref{sec:macro_tempo}).
+
+\subsection{Modern steps~--- technological, not genetic}
+\label{sec:modern_steps}
+
+At the present stage the critical path is driven not by the slow biological evolution of humans but by civilizational-technological progress. Here the internet, the computer, aviation, and artificial intelligence are not separate steps but \emph{milestones}: each is itself composed of an enormous number of elementary steps of complexification (scientific papers, engineering improvements, acts of knowledge exchange) and does not arise in a single atomic act. An atomic step at this level is much smaller than such a milestone. The apparent acceleration of progress at late stages is provided not by a shortening of the tick of an individual step but by a change of the memory carrier (genes $\to$ culture $\to$ technology).
+
+\subsection{Convergence of civilizations}
+\label{sec:time_form}
+
+Kinematic uniqueness (Sec.~\ref{sec:uniqueness}) pertains to the \emph{total time} $T_{\mathrm{exit}}$: among all trajectories to the threshold of complexity there exists a unique global minimum of time. The projection onto the space of \emph{civilization forms}~--- the morphology of the biological carrier, the functional plan, the technosphere~--- is high-dimensional, but the concentration of the sum of steps compresses the interplanetary spread in time. Exit times fall into a narrow ``tube'' $\sigma \sim 10^3$~yr (Sec.~\ref{sec:concentration}, Sec.~\ref{sec:inversion}), and the relative spread is $\sigma/T \sim c_v/\sqrt{N} \sim 10^{-7}$ for $N \sim 10^{14}$. It is logical to suppose, as a consequence, that the form is compressed in an analogous way: civilizations on different planets are of course not identical, but their morphological-functional spread is of the same order of smallness~--- each its own, yet on the whole all \emph{relatively} close, in the \emph{vicinity} of a single humanoid of \emph{functional type}.
+
+From the model (together with convergent evolution, Sec.~\ref{sec:ltee}) there \emph{follows} a reproducible \emph{functional} plan of the biological carrier~--- manipulator limbs, a large social brain, tool use~--- rather than a fundamentally different evolutionary-morphological basis. The residual differences between planets lie on the scale of the same ``dispersion'': not an arbitrary spread of forms, but small fluctuations about the attractor of the critical path (without asserting identity with terrestrial morphology; Sec.~\ref{sec:open_civ_form}).
+
+\subsection{Experimental evidence for the reproducibility of the path}
+\label{sec:ltee}
+
+The Lenski long-term experiment (LTEE~\cite{Lenski2017}) is the best available testbed: 12 parallel ``replays of the tape'' from a single ancestral clone, more than 73,000 generations. This is a controlled staging of the Conway Morris~\cite{ConwayMorris2003} $\leftrightarrow$ Gould~\cite{Gould1989} debate.
+
+The indicator of synchrony is not the identity of mutations but the \textbf{repeatability of the functional result and of the timing} between independent lines. All 12 lines follow almost the same fitness-growth curve~\cite{Wiser2013,Lenski1994}. At the level of the result, evolution is repeatable~--- direct evidence that the fastest critical path of complexification is fixed and reproducible.
+
+Contingent singularities exist, but outside the critical path: aerobic growth on citrate (Cit$^+$) arose in only 1 of the 12 lines~\cite{Blount2008,Blount2012}. This is a slow detour to a side resource; the critical path bypasses such offshoots. Cit$^+$ shows that contingent transitions exist but do not lie on the critical path as long as a faster route is available.
+
+\textbf{A reservation about scale.} The LTEE measures microevolution; the transfer micro $\to$ macro is a separate assumption.
+
+%%% ===================================================================
+\section{Evolution before Earth: the cosmic phase of the critical path}
+\label{sec:cosmic_ensemble}
+%%% ===================================================================
+
+\textit{This section describes the cosmic phase of the critical path: the synchronous start from the relic-radiation gate, three independent ``complexity clocks,'' a locally convergent prebiotic chemistry up to the threshold C*, the ``freezing'' of open-space complexification above C*, and the formation of a synchronized planetary cohort.}
+
+\subsection{Common start and the relic-radiation gate}
+\label{sec:common_start}
+
+The critical path begins not with the appearance of life on a planet and not with the formation of the Earth, but with the first moment when liquid-phase chemistry became possible in the Universe. This moment is set by the \textbf{thermal gate of the relic radiation}: at $100 \lesssim (1+z) \lesssim 137$ the CMB temperature was 273--373~K, making liquid-phase chemistry possible on any rocky body independently of the presence of a star, as early as $\sim 10$--17~Myr after the Big Bang~\cite{Loeb2014}. The relic radiation is isotropic to $\Delta T/T \sim 10^{-5}$; with $T_{\mathrm{CMB}} \propto t^{-2/3}$ (the matter-dominated era), the spread of the gate-opening moment is $\Delta t/t \approx (3/2)(\Delta T/T) \sim 1.5 \times 10^{-5}$, whence for $t \sim 10$--17~Myr we obtain $\Delta t \sim 10^2$~yr~--- an order of magnitude smaller than the $\sigma \approx 10^3$~yr obtained independently from silence (Sec.~\ref{sec:inversion}). This is a cosmological, not a biological, \emph{common start}: the ``clock'' is started simultaneously for the entire Universe, while on Galactic scales ($\sim 30$~kpc, or $\sim 0.3$~kpc at $z\sim 120$) Silk damping~\cite{Silk1968} suppresses the CMB fluctuations to $\ll 10^{-5}$, so that $\sigma_{\mathrm{CMB}} \approx 0$ and there is no inter-system spread from the gate. The interplanetary dispersion is determined solely by the stochasticity of the sum of steps (additivity of variance) over the whole chain of complexification~--- from this moment to a technological civilization. Which moment exactly to count as the common start~--- the CMB thermal gate, the gate of the first stars, or a later event~--- remains open (Sec.~\ref{sec:open_start}).
+
+\subsection{Complexity clocks}
+\label{sec:complexity_clocks}
+
+The existence of ``complexity clocks'' follows from the critical path: with a kinematically unique trajectory (Sec.~\ref{sec:uniqueness}) and cascade fixation in heritable memory (Sec.~\ref{sec:cascade}), the accumulated complexity grows monotonically and empirically exponentially, so any monotone measure of it is a chronometer once the tempo is calibrated; the ``clock'' here is not an additional postulate.
+
+\textbf{The first clock: the functional genome (Sharov).} Alexei Sharov proposed using the growth of the functional (non-redundant) genome size as a ``clock'' of the origin and evolution of life~\cite{Sharov}: the regression $\log_{10}G = 8.64 + 0.89\,t$ ($t$ in Gyr) gives exponential growth by a factor of $\sim 7.8$ per Gyr (doubling $\sim$ every 340~Myr), and extrapolation to a single nucleotide places the origin of life $\sim 9.7 \pm 2.5$~Gyr ago~\cite{Sharov2013}~--- even before the formation of the Earth. It follows that the critical path begins not on a planet: a significant part of the complexification~--- from prebiotic chemistry to the first replicator~--- proceeds in open space, billions of years before the appearance of oceans.
+
+\textbf{An independent ``complexity clock'': the assembly index.} Assembly Theory offers an independent measure of molecular complexity~--- the \emph{assembly index} (MA), equal to the minimum number of copy operations needed to build a molecule from atoms~\cite{Marshall2021,Cronin2023}. Published values: glycine MA$\approx$4~\cite{Marshall2021}, adenine MA$\approx$7, ATP MA$\approx$21~\cite{Mathis2021}, typical metabolites MA$\approx$12--15 (adenosine MA$\approx$13~\cite{Marshall2021}). The $\log_2(\mathrm{MA})$ scale is compatible with Sharov's scale: for random polymer sequences MA$\approx N$ (the chain length), so $\log_2(\mathrm{MA}) \approx \log_2 N$~--- exactly what Sharov measures. This opens the possibility of \textbf{unifying} the two scales into a single ``complexity clock'' from the Big Bang to the present day: the abiotic phase (chemical growth of MA) passes smoothly into the biological one (genomic growth per Sharov). A quantitative estimate shows that both curves are compatible; however, the rate of complexification in the abiotic phase ($\sim 0.6$~Gyr$^{-1}$ on the logarithmic scale) is about 4--5 times lower than in the biological one ($\sim 3.0$~Gyr$^{-1}$ per Sharov). The present work does \emph{not} undertake to build a full unified scale and uses a simplified single-phase model of the sum of stages; the development of unified complexity clocks is deferred to the open questions (Sec.~\ref{sec:unified_clocks}).
+
+\textbf{The third ``clock'': free-energy rate density (Chaisson).} Complexity can be tracked not only informationally (genome, assembly index) but also \emph{energetically}. Eric Chaisson proposed the \emph{free-energy rate density} $\Phi_m$ (erg$\cdot$s$^{-1}\cdot$g$^{-1}$) as a universal metric of complexity and a driver of evolution~\cite{Chaisson2011}: it grows monotonically along the entire cosmic ladder: stars $\sim 1$, planets $\sim 10^2$, plants $\sim 10^3$, animals $\sim 10^4$, brain $\sim 10^5$, technological society $\sim 10^6$, and, plotted against the time of appearance of the structures, gives an approximately exponential growth over $\sim 13$~Gyr (doubling of order $\sim 0.5$--$1$~Gyr). Unlike the two previous measures, this clock records not information but \emph{dissipation}, and therefore connects directly to the cascade thermodynamic picture (Sec.~\ref{sec:cascade}): each step ``to the right'' raises the height of the rung and $\Phi_m$. \emph{A refinement:} from the mechanics of the critical path (Sec.~\ref{sec:cascade}) what physically grows above all is the \textbf{specific rate of entropy production} $\dot S_{\mathrm{prod}}$, not energy as such~--- it is $\dot S_{\mathrm{prod}}$ that is directly tied to the rungs of complexity (each step ``to the right'' increases the entropy increment $\Delta S$). The free-energy flux $\Phi_m$ is a convenient and measurable but essentially \emph{derived} quantity; at fixed $T$ they are proportional ($\dot S = \Phi/T$), so for the role of a clock they are the same, but it is the rate of entropy production that is physically justified. It is this clock that is used below for the energetic estimate of the level C* from the budget of a dust grain (Sec.~\ref{sec:idp_dust}, Sec.~\ref{sec:freeze}).
+
+\textbf{Toward unifying the three clocks.} The three independent measures~--- the functional genome (Sharov), the assembly index MA (Cronin/Walker), and the free-energy rate density $\Phi_m$ (Chaisson)~--- describe one trajectory of complexification from different sides: informational (the first two) and energetic (the third). Their unification into a single ``complexity clock'' from the Big Bang to civilization looks natural: all three grow approximately exponentially and are connected by the cascade model (Sec.~\ref{sec:cascade}), where the growth of heritable information ($N$, MA) and the growth of dissipation ($\Phi_m$) are two sides of one climb up the energy rungs with fixation of the result in memory. Reconciling the tempos is nontrivial: in the biophase the informational clocks run $\sim 4$--$5$ times faster than in the abiotic phase, while $\Phi_m$ grows even with an almost unchanged genome (in prokaryotes the genome reached a plateau, whereas dissipation continued to grow through metabolic optimization). But this is not a contradiction: all three clocks measure \emph{the same thing}~--- the growth of complexity along the critical path~--- merely from slightly different sides (heritable information versus dissipation), and therefore they \textbf{complement one another}. Their discrepancies do not devalue the clocks but carry additional meaning~--- they indicate a change of the leading carrier of complexification; together the three measures give a more complete picture of the single trajectory than any one alone. The construction of consistent three-component clocks (with conversion between $\log N$, $\log \mathrm{MA}$, and $\log \Phi_m$ and explicit per-phase tempos) we leave as a separate task (Sec.~\ref{sec:unified_clocks}); for the present work it matters only that all three independently point to a single, approximately exponential critical path that starts even before the formation of the Earth.
+
+\subsection{Local convergence of prebiotic chemistry}
+\label{sec:local_conv}
+
+\textbf{The threshold C*} is the level of pre-cellular complexity below which open-space evolution is stable, and above which a stable liquid-phase medium, a resource pool, a concentrated flux of free energy, active transmembrane transport, and a full metabolism are required~--- all possible only on a warm planet. In complexity, C* lies \emph{below} a full cell; exactly how far below is an open question (Sec.~\ref{sec:open_cstar_level}; only working estimates are adopted for the model, Sec.~\ref{sec:freeze}).
+
+The synchrony of reaching the threshold C* near different stellar systems is ensured not by the exchange of matter between parts of the galaxy~--- such exchange operates on timescales $\gg \sigma$ and physically could not explain the synchronization~--- but by the \textbf{local convergence} of prebiotic chemistry. Near each forming stellar system the prebiotic reactions proceed on the same physical inputs:
+
+\begin{itemize}
+   \item \textbf{Chemical composition:} the interstellar medium of the galactic disk contains an approximately equal ratio of organogenic elements (H, C, N, O, S, P), set by the nucleosynthesis of preceding generations of stars. The typical spread of the key ratios (above all C/O) across the disk for a given epoch in the solar neighborhood is no more than $\sim 2$--$3$-fold~\cite{Oberg2021,BrewerFischer2016}; the overall metallicity [Fe/H] may vary more strongly, but for prebiotic chemistry and early biology it is precisely the availability and relative amounts of organogenic elements that are critical.
+   \item \textbf{Energy sources:} ultraviolet radiation, cosmic rays, and shock waves are universal and present near every forming system.
+   \item \textbf{Physical conditions:} the temperatures of molecular clouds and protoplanetary disks are governed by the same physical laws and are similar everywhere.
+\end{itemize}
+
+The same starting elements plus the same laws of physics and chemistry generate a \textbf{convergent} prebiotic path: as in biological evolution (Sec.~\ref{sec:ltee}), the fastest chemical route to a given level of complexity is reproducible. Each stellar system \emph{locally} and \emph{independently} ``discovers'' the same organic molecules in the same sequence~--- amino acids, nucleobases, ribose, simple replicators~\cite{Furukawa2019,Callahan2011,Oberg2021}. The spread in speed is determined by chemical kinetics, not by the random peculiarities of a specific system.
+
+\subsection{Fine cosmic dust}
+\label{sec:idp_dust}
+
+Where exactly in the cosmic phase the pre-cellular complexity up to C* accumulates~--- in molecular clouds, the protoplanetary disk, on comets, in interstellar and interplanetary dust (IDPs), or in meteorites~--- has not been firmly established (Sec.~\ref{sec:open_carriers}). Most likely, accumulation up to C* proceeded on the \emph{earlier} of these carriers~--- those with a longer lifetime; interplanetary dust around an already-formed planet is \emph{relatively young} and short-lived~\cite{Nesvorny2010,Grun1985}. For the \emph{final} delivery of the ready pre-cellular chemistry to a planet we lean toward \textbf{fine dust} as the preferred carrier: dust grains are extremely numerous, and, unlike large meteorites, small particles ($\sim 10$~$\mu$m) decelerate smoothly in the atmosphere and settle onto the surface \emph{without substantial heating} (below the pyrolysis temperature of organics, $\sim 600^\circ$C), delivering the accumulated complex chemistry intact; it is precisely such dust that contributes the bulk of the extraterrestrial organic carbon to Earth~\cite{Anders1989,ChybaSagan1992,Flynn2004}.
+
+\subsection{Freezing of the cosmic phase at C*}
+\label{sec:freeze}
+\label{sec:cstar_dust}
+
+Convergent prebiotic chemistry (Sec.~\ref{sec:local_conv}) works as long as the steps require little energy and impose no stringent demands on the medium. What stops further complexification above the threshold C* in open space is not established (Sec.~\ref{sec:open_freeze}); below is the model's \emph{working hypothesis}, valid for any open cosmic site (dust, comets, meteorites, etc.), not only for fine dust (Sec.~\ref{sec:idp_dust}). We assume that the barrier is connected with the \emph{conditions of the medium} rather than with a global ``cooling'' of the Universe: cosmic cooling is too slow, and the energy for prebiotic chemistry on such carriers is supplied by local sources~--- the UV of young stars and shock processes (Sec.~\ref{sec:local_conv})~--- rather than by the relic background with its early thermal gate (Sec.~\ref{sec:common_start}). Under this hypothesis the lipid membrane, transmembrane transport, and a full metabolism require a stable liquid-phase medium, a resource pool, and a sustained flux of free energy~--- none of which can be provided on an open carrier in vacuum. Cosmic evolution ``freezes'' at the \textbf{threshold level of complexity} C* (pre-cellular structures): in meteorites and protoplanetary disks one finds only prebiotic organics, but not living cells. The steps above C* are transferred to warm planets with an atmosphere, a hydrosphere, and a resource pool. Below are chronological and energetic estimates of this threshold.
+
+The experimental lower bound of cellular complexity is JCVI-syn3.0~\cite{Hutchison2016}: 473 genes, a genome of $\sim 5.31\times10^{5}$~bp. In Sharov's scheme (Sec.~\ref{sec:complexity_clocks}) the same ``prokaryote'' rung is calibrated by two anchors: $G \sim 5\times10^{5}$~bp (minimal modern bacteria) and $t \sim 3.5$~Gyr from early fossils~\cite{Sharov,Sharov2013}. We do \emph{not} identify C* with this point: syn3.0 sets only a \emph{rough upper} estimate $G_{\text{C*}} < G_{\text{cell}} \approx 5.31\times10^{5}$~bp, without an independent calibration of C* itself. On Sharov's scale C* lies to the left (smaller $G$) and, by our assumption, \emph{earlier} in $t$ than the first cell ($\sim 3.5$~Gyr from fossils). Substituting $G_{\text{cell}}$ into the regression $\log_{10}G = 8.64 + 0.89\,t$ does not ``predict'' C* but merely recovers the already-specified calibration moment of the first cell. Between the formation of the Earth ($4.5$~Gyr) and the appearance of cells ($\lesssim 3.5$~Gyr) there is, in calendar terms, $\sim 1$~Gyr~--- the window of the planetary segment: pre-cellular chemistry at the level C* is already arriving on cosmic carriers (Sec.~\ref{sec:idp_dust}).
+
+Let us also estimate the energy budget of the minimal front of the critical path at the level C*, using the calibration from Sec.~\ref{sec:resource_threshold}. The reference is the LTEE flask ($\sim 3 \times 10^{-4}$~W, $\sim 300$~$\mu$W), with two corrections introduced. \emph{First}, this power is generous: the flask ($5\times10^{8}$ cells) lies $\sim 2.7$ orders of magnitude above the threshold for reaching the speed plateau ($N_c\sim 10^{6}$, Sec.~\ref{sec:resource_threshold}), so the minimal front, still holding on the plateau, requires only $\sim 10^{-6}$~W. \emph{Second}, at the pre-cellular stage the specific dissipation is $\sim 2$ orders of magnitude below the modern microbial value (the growth of $\Phi_m$ per Chaisson over $\sim 4$~Gyr, Sec.~\ref{sec:cascade}), which lowers the front by two more orders~--- to $\sim 10^{-9}$~W. The position of C* thereby lies about $4$--$5$ orders of magnitude below the LTEE front. Let us compare this power with the energetics of a \emph{single} dust grain (Sec.~\ref{sec:idp_dust}). For a grain of radius $r \sim 5$~$\mu$m ($\sim 10$~$\mu$m in diameter) at $\sim 1$~AU from a forming star, with a flux $F \sim 10^3$~W/m$^2$, the intercepted power is $P \approx F\pi r^2 \sim 10^{-7}$~W; the fraction of photochemically active UV, $f_{\mathrm{UV}} \sim 10^{-2}$, gives $P_{\mathrm{UV}} \sim f_{\mathrm{UV}} P \sim 10^{-9}$~W~--- the same order as the minimal front at the level C*. The condition ``a single dust grain is enough'' is satisfied; under the same assumption of an earlier C*, this is consistent with the pre-cellular barrier and explains the rapid start of life on Earth~--- the ready pre-cellular chemistry was delivered on the carriers of the protoplanetary disk (Sec.~\ref{sec:idp_dust}).
+
+\subsection{The cohort of Earth-like planets on the critical path}
+\label{sec:bimodal}
+
+The existence of a pre-planetary segment of the critical path (up to the threshold C*, Sec.~\ref{sec:freeze}) determines which planets exactly belong to the current synchronized peak.
+
+The \textbf{critical-path cohort} comprises Earth-like planets that formed \emph{before} the appearance of the first cells ($\sim 3.5$~Gyr ago from fossils; Sec.~\ref{sec:freeze}). These planets received pre-cellular chemistry at the level C* directly upon formation and launched the planetary segment without a break; like the whole path, it requires local oases with a surplus of resources (Sec.~\ref{sec:planetary_spread}). The starting conditions for all of them are common-mode: chemistry at the level C* in the interstellar medium is reached locally and independently (Sec.~\ref{sec:local_conv}) near each system. The interplanetary spread is determined by the stochasticity of the sum of steps: $\sigma \approx \sqrt{\mu\,T} \sim 10^3$~yr. This is the synchronized peak to which we belong.
+
+The Earth (age 4.5~Gyr) lies near the \textbf{upper age boundary of the cohort}: it formed $\sim 1$~Gyr before the first cells on Sharov's clock and is one of the ``youngest'' planets in this peak. The planets of the cohort must have formed \emph{before} the ``freezing'' of the cosmic stage at C*~--- otherwise the pre-cellular chemistry would not have had time to be delivered from the carriers of the protoplanetary disk (Sec.~\ref{sec:idp_dust}). Those that formed \emph{after} the appearance of the first cells are not in the cohort: their planetary segment started with a delay relative to the synchronized peak.
+
+For the estimate of $n$: the current synchronized peak includes only Earth-like planets older than $\sim 4$~Gyr, which additionally constrains $n \sim 10^4$--$10^5$ (Sec.~\ref{sec:silence_sigma}).
+
+%%% ===================================================================
+\section{Estimating \texorpdfstring{$\sigma$}{σ} from silence}
+\label{sec:inversion}
+%%% ===================================================================
+
+\textit{This section inverts cosmic silence into an estimate of the interplanetary dispersion $\sigma$ of the exit times to the detectable (``loud'') stage and of the number $n$ of Galactic planets on which the critical path is proceeding right now; it compares the results with independent astrophysics and microbiology and formulates the consequences for SETI.}
+
+\subsection{Time to the loud stage}
+\label{sec:loud_time}
+
+In keeping with the division into ``loud'' and ``quiet'' civilizations~\cite{Hanson2021} we identify ``loudness'' with reaching Type~II on the Kardashev scale ($P_{\mathrm{II}} = 10^{26}$~W by the classical Sagan interpolation~\cite{Kardashev1964,Sagan1973}): a star-level energy budget that yields a signature detectable at interstellar and intergalactic distances (the thermal emission of Dyson spheres and other megastructures~\cite{Dyson1960,Wright2014}). This is not a new assumption of the present work but a detectability threshold accepted in the SETI literature (Sec.~\ref{sec:open_loud}).
+
+The current power of civilization is $P_0 \approx 2 \times 10^{13}$~W ($\approx 20$~TW as of 2024~\cite{EI2024}), which on the Sagan scale corresponds to $K \approx 0.73$~\cite{Sagan1973,Zhang2023}. The historical average growth rate of world energy consumption over recent decades is $\approx 1.5\%$--$2.0\%$ per year (per IEA~\cite{IEA2023} and EI~\cite{EI2024}), so the value $3\%$ is used here as a realistically optimistic scenario for an accelerating stage of technosphere development; at an exponential growth of $3\%$ per year the time to Type~II is:
+\begin{equation}
+t_{\mathrm{loud}} = \frac{\ln(P_{\mathrm{II}}/P_0)}{\ln(1.03)} \approx 990~\text{yr}.
+\end{equation}
+The sensitivity of this quantity to the growth rate is presented in Table~1.
+
+\medskip
+There are no direct forecasts for exactly $3\%$: the leading scenarios (EIA IEO, IEA STEPS, the ML forecast~\cite{Zhang2023}) give $\sim 1$--$1.3\%$/yr; at such a rate, reaching the loud stage (Type~II) takes $\approx 2.3$--$2.9$~kyr, while at the optimistic $3\%$ it takes $\approx 990$~yr. The value $3\%$ is taken as the optimistic upper edge of historical experience ($\approx 2.4\%$/yr on average over 1965--2020~\cite{Smil2017,EI2024}). The current phase appears to be accelerating: the growth in demand from data centers and AI computation is estimated at $\sim 15$--$30\%$/yr through 2030~\cite{IEA2025AI}, which makes the scenario of accelerating energy consumption realistic on the near horizon~--- although this is a decade-scale surge in electricity consumption rather than a sustained rate of total power on the horizon $t_{\mathrm{loud}}$. Importantly, the conclusion does not depend on the exact rate: over the whole range $1$--$4\%$ the value $t_{\mathrm{loud}}$ remains of order $10^3$~yr (cf.\ Table~1: $746$--$1964$~yr at $1.5$--$4\%$), so the inverted $\mu = \sigma^2/T$ stays within the window of the generation time of microorganisms for any plausible growth rate.
+
+\begin{center}
+\textbf{Table 1.} Time to the transition to the loud stage ($t_{\mathrm{loud}}$) for various exponential growth rates ($P_{\mathrm{II}} = 10^{26}$~W, $P_0 = 2 \times 10^{13}$~W).
+
+\medskip
+\begin{tabular}{ccc}
+\toprule
+Growth rate per year & to Type~I ($10^{16}$~W) & to Type~II ($= t_{\mathrm{loud}}$) \\
+\midrule
+1.5\% & 417 yr & 1964 yr \\
+2.0\% & 314 yr & 1477 yr \\
+2.5\% & 252 yr & 1184 yr \\
+\textbf{3.0\%} & \textbf{210 yr} & \textbf{990 yr} \\
+3.5\% & 181 yr & 850 yr \\
+4.0\% & 158 yr & 746 yr \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{The silence argument as a constraint on the dispersion}
+\label{sec:silence_sigma}
+
+An empirical fact: no detectable ``loud'' civilizations are observed in the Milky Way~--- systematic IR searches for partial Dyson spheres in Gaia, 2MASS, and WISE data (Project Hephaistos~\cite{Suazo2024}) have revealed no confirmed megastructures. The statistical arguments of the Fermi paradox show that the absence of signals imposes an upper bound on the fraction of civilizations that have reached the level at which they would become interstellar-visible~\cite{Wright2014,Hanson2021}. If the interplanetary spread of exit times $\sigma$ substantially exceeded $t_{\mathrm{loud}}$, a noticeable fraction of nearby civilizations would precede us by more than $t_{\mathrm{loud}}$, would have had time to become loud, and would be visible.
+
+Quantitatively, we adopt a model with a \emph{galactic habitable zone} (GHZ)~\cite{Lineweaver2001,Scherf2024}: $n$ worlds uniformly in a cylindrical ring $r_{\min}\le r\le r_{\max}$ ($r_{\min}\approx4$~kpc~--- the inner edge: high supernova frequency and excess metallicity near the bulge; $r_{\max}\approx14$~kpc~--- the outer edge: a deficit of metals for rocky planets) and full thickness $h = 10^3$~ly (volume $V_{\mathrm{GHZ}} = \pi(r_{\max}^2-r_{\min}^2)h$). The ring $4$--$14$~kpc is a simplified GHZ, consistent in order of volume with the Scherf--Lammer calculations~\cite{Scherf2024}; a substantial narrowing of the ring tightens the silence estimate without changing the order-of-magnitude conclusions ($n\sim10^4$--$10^5$, $\sigma\sim10^3$~yr). A smoothed density profile $\propto e^{-r/R_d}$ ($R_d=3$~kpc) instead of sharp ring boundaries shifts $\sigma$ by $\sim1$--$2\%$ (Monte Carlo, $N_{\mathrm{MC}}=4\times10^5$). The observer is at the solar radius $R_\odot=8$~kpc, $c = 1$~ly/yr. The integrand factor $\Phi(-(t_{\mathrm{loud}}+s)/\sigma)$ falls off with distance $s$ over a scale of several $\sigma_r$, where $\sigma_r\equiv c\sigma\sim10^3$~ly ($\sim0.3$~kpc; $\sigma$ is the dispersion of the \emph{calendar} exit times to Type~II between planets, and $s$ and $\sigma_r$ are in light-years with $c=1$~ly/yr), while $R_\odot$ is removed from both edges of the ring by $\gg\sigma_r$; in the effective neighborhood of the observer the density is \emph{constant}. A world at three-dimensional distance $s$ from the observer is counted in the integral as \emph{potentially} visible today if it preceded us by no less than $t_{\mathrm{loud}} + s$~--- built the loud phase ($t_{\mathrm{loud}}$) plus transmitted the signal ($s/c$)~--- with probability $\Phi(-(t_{\mathrm{loud}}+s)/\sigma)$ (the upper tail of the distribution of exit times to Type~II; a consequence of the CLT). The expected number of such neighbors is:
+\begin{equation}
+\boxed{\;\mathbb{E}[V] = \frac{n}{V_{\mathrm{GHZ}}}\int_{-h/2}^{h/2}\!\!\int_{r_{\min}}^{r_{\max}} \Phi\!\left(-\frac{t_{\mathrm{loud}}+s(r,z)}{\sigma}\right) 2\pi r\,\mathrm{d}r\,\mathrm{d}z \;\lesssim\; 1,\;}
+\end{equation}
+where $s(r,z)$ is the distance from $(R_\odot,0,0)$ to the point $(r,z)$. When the distance from $R_\odot$ to the ring edges is $\gg\sigma_r$, the integral is equivalent to a homogeneous density $\rho=n/V_{\mathrm{GHZ}}$ and is taken in closed form: with $a=t_{\mathrm{loud}}/\sigma$ and $\beta=h/2\sigma_r$, the passage to the 3D distance $s$ (with $R\to\infty$, the correction $\sim e^{-(R/\sigma_r)^2/2}$ being negligible) gives $\mathbb{E}[V]=(n/V_{\mathrm{GHZ}})\,4\pi\sigma_r^3\,W(a,\beta)$, $W(a,\beta)=\int_0^\beta K(a;y)\,dy$, where $K(a;y)=\int_y^\infty x\Phi(-(a+x))dx=\tfrac12[(1+a^2-y^2)\Phi(-(a+y))+(y-a)\varphi(a+y)]$; the outer integral is a finite combination of $\Phi$ and $\varphi$ at the points $a$ and $a+\beta$ (Gaussian moments). Limiting cases: $\beta\to0$ gives the 2D form $\sigma_r^2 K(a)$, $K(a)=\tfrac12[(1+a^2)\Phi(-a)-a\varphi(a)]$; $\beta\to\infty$ gives the 3D form $\sigma_r^3 M(a)$, $M(a)=\tfrac13[(a^2+2)\varphi(a)-a(3+a^2)\Phi(-a)]$. The finite thickness $h$ is essential: at small distances $s \lesssim h/2$ the neighbors are distributed three-dimensionally, at large ones planarly. From $\mathbb{E}[V]\lesssim 1$ one finds, for each $n$, the \textbf{largest} $\sigma$ at which silence is still possible (the upper bound, Table~2); $n$ is the number of planets in the Galaxy's GHZ on which the critical path is proceeding right now, and $\sigma$ is the interplanetary spread of the exit times to Type~II, not the moment when we \emph{see} them.
+
+It is precisely here~--- and only here~--- that the model uses the \emph{shape} of the distribution (the Gaussian $\Phi$) rather than concentration alone. This is a separate assumption, and it is invoked in the \emph{upper tail}, where the convergence of the sum to the normal by the central limit theorem is slowest: real large deviations may depart from Gaussian. Within the model, the correction to the Gaussian tail can be estimated by an Edgeworth expansion: the skewness of the sum is $\gamma_\Sigma=\gamma_{\text{step}}/\sqrt{N_{\mathrm{eff}}}$, $N_{\mathrm{eff}}=(\sum_i\sigma_i^2)^2/\sum_i\sigma_i^4$; for $\gamma_{\text{step}}\sim1$ (an exponential step, $c_v\approx1$, Sec.~\ref{sec:mu_from_sigma}) and $N_{\mathrm{eff}}\sim N\sim10^{14}$, the relative shift of the population bound is $\Delta n/n\sim1/\sqrt{N_{\mathrm{eff}}}\sim10^{-7}$ in the working zone of the integral ($z\approx1.5$--$2$). A noticeable deviation would require $N_{\mathrm{eff}}\lesssim10^2$, i.e.\ a hidden dominant step (Sec.~\ref{sec:heterogeneity}, Sec.~\ref{sec:planetary_steps})~--- of the same class that the eukaryogenesis test checks (Sec.~\ref{sec:eukaryo}). On $\sigma$ itself the tail shape has little effect: a factor of $10$ in $n$ corresponds to only a $\sim1.7$-fold shift in $\sigma$.
+
+\begin{center}
+\textbf{Table 2.} Upper bound on $\sigma$ at $\mathbb{E}[V]=1$ (GHZ: $r_{\min}=4$~kpc, $r_{\max}=14$~kpc, $h = 10^3$~ly, $R_\odot=8$~kpc, $t_{\mathrm{loud}} = 990$~ly). $n$~--- worlds uniformly in the volume $V_{\mathrm{GHZ}}$; $\sigma$~--- the solution of the closed form above. $\ell = \Gamma(4/3)\,(3(r_{\max}^2-r_{\min}^2)h/(4n))^{1/3}$~--- the mean 3D distance to the nearest neighbor ($\rho = n/V_{\mathrm{GHZ}}$).
+
+\medskip
+\begin{tabular}{ccc}
+\toprule
+$n$ & $\sigma$, yr & $\ell$, ly \\
+\midrule
+$10^2$ & 6960 & 2170 \\
+$10^3$ & 2690 & 1010 \\
+$10^4$ & 1290 & 470 \\
+\textbf{$2.9 \times 10^4$} & \textbf{990} & \textbf{330} \\
+$10^5$ & 775 & 220 \\
+$10^6$ & 550 & 101 \\
+$10^7$ & 430 & 50 \\
+$10^8$ & 350 & 22 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{The number of planets on the critical path}
+\label{sec:kepler}
+
+\textbf{The Scherf--Lammer 2024 estimate.} The work~\cite{Scherf2024,Lammer2024} estimates the maximum number of \emph{Earth-like Habitats}~--- rocky planets in the habitable zone of complex life capable of retaining a stable Earth-type nitrogen--oxygen atmosphere with low $\mathrm{CO_2}$~--- accounting for the star-formation history, the initial mass function, the galactic habitable zone, and the thermal stability of atmospheres. The result: in the entire Milky Way there are \textbf{no more than $n_{\text{EH}} \sim 6\times10^4$--$2.5\times10^5$} such environments, predominantly around G- and K-type stars. This estimate already incorporates the key cuts~--- the planet's age, the star's generation and metallicity~\cite{Lineweaver2001,Behroozi2015}, the position in the galactic habitable zone, and atmospheric stability. The full set of selection criteria: the star-formation rate and the initial mass function, the galactic habitable zone, predominantly G- and K-type stars, the habitable zone of \emph{complex} life, the frequency of rocky planets ($\eta_\oplus$), the simultaneous presence of oceans and land, the probable requirement of a large moon, and the thermal stability of an N$_2$--O$_2$ atmosphere at a given CO$_2$ fraction.
+
+\textbf{Coincidence with silence.} The independent result from cosmic silence (Sec.~\ref{sec:silence_sigma}, Table~2)~--- $n \sim 10^4$--$10^5$ civilization-bearing planets at $\sigma \sim 0.7$--$1.3$~kyr~--- coincides with the Scherf--Lammer astrophysical estimate ($n_{\text{EH}} \sim 10^5$). Two independent channels~--- the astrophysics of the population and the statistics of the silence~--- converge on $n \sim 10^5$; the silence inversion (Sec.~\ref{sec:silence_sigma}) and Scherf--Lammer count $n$ in the same class of volumes~--- the ring of the galactic habitable zone. Were there orders of magnitude more planets on the critical path, the silence would be broken (Sec.~\ref{sec:silence_sigma}). Since $n_{\text{EH}}$ is an upper estimate of the number of suitable environments, not of guaranteed civilizations, the actual $n$ on the critical path may be lower; this only tightens the agreement with the silence.
+
+\subsection{The mean elementary tick \texorpdfstring{$\mu$}{μ}}
+\label{sec:mu_from_sigma}
+
+In the single-phase approximation with a single averaged tick ($\sigma = \sqrt{\mu T}$), the observational bound on $\sigma$ (from the silence condition) \textbf{inverts} into an estimate of the \emph{mean} elementary step time $\mu \equiv T/N$ (Sec.~\ref{sec:concentration}), not of the duration of each individual step (the $\mu_i$ may differ):
+\begin{equation}
+\boxed{\mu = \frac{\sigma^2}{T}.}
+\end{equation}
+With $T = 1.38 \times 10^{10}$~yr, for each row of Table~2 (silence at $\mathbb{E}[V]=1$) we obtain consistent parameters (Table~3): $\mu=\sigma^2/T$, $N=(T/\sigma)^2$, and the growth rate as the \emph{inverse} substitution $t_{\mathrm{loud}}=\sigma$ via the formula of Table~1 (not the input of the integral, where $t_{\mathrm{loud}}=990$~yr). The identification $\sigma \approx t_{\mathrm{loud}}$ and the $3\%$/yr scenario hold only in the highlighted row.
+
+Combining the concentration $\sigma = \sqrt{\mu T}$ with the silence condition at the limit of visibility $\sigma \approx t_{\mathrm{loud}}$ (Sec.~\ref{sec:silence_sigma}), we obtain the closed expression
+\begin{equation}
+\mu \approx \frac{t_{\mathrm{loud}}^{2}}{T},
+\end{equation}
+into which only \emph{non-biological} quantities enter: the horizon for reaching the loud phase $t_{\mathrm{loud}} \sim 10^3$~yr (our own energy trajectory, Sec.~\ref{sec:loud_time}) and the age of the Universe $T$. Substituting $t_{\mathrm{loud}} \approx 10^3$~yr and $T \approx 1.38 \times 10^{10}$~yr gives $\mu \sim 40$~min. Without the postulate $c_v = 1$, the general relation $\sigma^2 = c_v^2\mu T$ (Sec.~\ref{sec:cascade}) gives $\mu = \sigma^2/(c_v^2 T) = (40~\text{min})/c_v^2$ and $N = c_v^2 (T/\sigma)^2$. However, $c_v$ need not be set externally: the relation $\sigma^2 = c_v^2\mu T$ links three quantities, and any two fix the third. Substituting the \emph{independently} known $\mu \approx 40$~min (division time, microbiology) and $\sigma \approx 990$~yr (silence, astronomy), we obtain $c_v^2 = \sigma^2/(\mu T) \approx 0.93$, i.e.\ $c_v \approx 0.97 \approx 1$. Kinetically this is consistent with the step being limited by a single transition of constant intensity: the minimum of parallel attempts is exponential, $c_v=1$ exactly (this concerns the statistics of \emph{waiting} for the step, not the retention of the result, Sec.~\ref{sec:ratchet}). In other words, with two \emph{independently} specified inputs ($\sigma$ from silence, $\mu$ from microbiology), the third quantity $c_v$ turns out to be close to unity, and the exponential form of the single-step waiting is not postulated arbitrarily but \emph{agrees} with this pair of channels (astronomy $\leftrightarrow$ microbiology) and with the kinetics of Sec.~\ref{sec:ratchet}. Here the issue is the \emph{shape} of the step distribution ($c_v$), not the choice of the reference row of Table~3~--- that is a separate, weaker step (below). The concentration itself, $\sigma/T = c_v/\sqrt{N}$, does not depend on the value of $c_v$.
+
+\begin{center}
+\textbf{Table 3.} Summary estimate by the rows of Table~2 ($T = 1.38 \times 10^{10}$~yr, $\mu = \sigma^2/T$~--- the mean step time). $n$~--- the number of planets on the critical path in the Galaxy's GHZ (Sec.~\ref{sec:silence_sigma}); $N$~--- the number of elementary steps; the growth rate~--- the rate of exponential growth of $P(t)$ at which $t_{\mathrm{loud}}=\sigma$ (inverse substitution from Table~1, not the input of the silence integral); the highlighted row is self-consistent ($\sigma=t_{\mathrm{loud}}=990$~yr, $3\%$/yr).
+
+\medskip
+\begin{tabular}{cccccc}
+\toprule
+$n$ & $\sigma$, yr & $\ell$, ly & growth, \%/yr & $\mu$, min (mean) & $N$ \\
+\midrule
+$10^2$ & 6960 & 2170 & 0.42 & 1840 & $3.9 \times 10^{12}$ \\
+$10^3$ & 2690 & 1010 & 1.1 & 276 & $2.6 \times 10^{13}$ \\
+$10^4$ & 1290 & 470 & 2.3 & 63 & $1.1 \times 10^{14}$ \\
+\textbf{$2.9 \times 10^4$} & \textbf{990} & \textbf{330} & \textbf{3.0} & \textbf{37} & \textbf{$1.9 \times 10^{14}$} \\
+$10^5$ & 775 & 220 & 3.8 & 23 & $3.2 \times 10^{14}$ \\
+$10^6$ & 550 & 101 & 5.3 & 12 & $6.3 \times 10^{14}$ \\
+$10^7$ & 430 & 50 & 6.8 & 7.0 & $1.0 \times 10^{15}$ \\
+$10^8$ & 350 & 22 & 8.4 & 4.7 & $1.6 \times 10^{15}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The inversion estimate $\mu \approx 40$~min (at the reference point of Table~3, $\approx 37$~min; an order-of-magnitude quantity, with a plausibility interval $25$--$75$~min~--- Sec.~\ref{sec:intervals}) lies in the range of the generation time of microorganisms (\emph{E.~coli} $\sim 20$--$60$~min): this is the tick of the \emph{speed plateau} of the microbial phase (Sec.~\ref{sec:resource_threshold}), not the calendar generation of multicellular organisms (Sec.~\ref{sec:sex}). Cosmic silence (astronomy) and the cell division time (microbiology) agree in \emph{order of magnitude} on one and the same ``unit tick'' of evolution. At a different growth rate (the ``growth'' column in Table~3) the value of $\mu$ would fall outside the biologically meaningful window. A single averaged $\mu$ is a simplification of the single-phase inversion: $\mu=\sigma^2/T$ gives a path $\mu^2$-mean ($\sigma^2=\sum_i N_i\mu_i^2$), not the tick of an individual phase; Sharov's clock~\cite{Sharov2013} and the assembly index~\cite{Marshall2021,Cronin2023} point to $\geq 2$ regimes of complexity growth (abiotic $\sim 0.6$~Gyr$^{-1}$, biological $\sim 3.0$~Gyr$^{-1}$). With $N = T/\mu \approx 1.9\times10^{14}$ (Table~3), by time $\sim 65\%$ of the steps are prebiotic ($\sim 9$~Gyr), the early planetary $\sim 9\%$, the microbial $\sim 22\%$ ($\sim 3$~Gyr of the unicellular phase on Earth~\cite{Nutman2016}), the multicellular and civilizational $\sim 4\%$; if the prebiotic phase's own tick differs from the biological one by $\sim 4$--$5$ times, the inverted $\mu$ shifts by a factor of a few, while $\sigma$ from silence is unaffected~--- only the comparison of $\mu$ with the microbial window weakens (the tempo of prebiotic steps~--- Sec.~\ref{sec:open_prebiotic_tempo}).
+
+\textbf{A reservation about the choice of row.} The inversion ``silence $\to \sigma$'' at fixed $T$ gives $\mu=\sigma^2/T$ \emph{for each} row of Table~2 (Table~3), not a unique $\mu$ from first principles. Of all the rows, only a narrow one is biologically meaningful~--- $\mu \approx 20$--$60$~min, corresponding to $n \sim 10^4$--$10^5$ and an energy-consumption growth rate of $\sim 2$--$3\%$/yr. We choose the reference row ($n \approx 2.9\times10^4$, growth $3\%$) not as the only possible one but as the \emph{most plausible}: the rate $3\%$ is a realistically optimistic scenario for an accelerating technosphere, and the resulting $\mu \approx 37$~min coincides with the measured division time of microorganisms. The coincidence \emph{cuts off} rows with an implausible tick and \emph{selects} the one where three empirical reference points converge~--- microbiology ($\mu$), the astrophysical population estimate (Scherf--Lammer, $n$), and a realistic energy-consumption growth rate; this strengthens the estimate but does not prove it. Through $\sigma = \sqrt{\mu T}$ the same window $\mu \approx 20$--$60$~min corresponds to $\sigma \approx 730$--$1260$~yr; by Table~2 such a range of $\sigma$ admits, under the observed silence, $n \sim 10^4$--$10^5$ civilization-bearing planets in the Milky Way. This is a joint falsifiable prediction of two independent channels: if the Galactic population turns out to be $n \gg 10^5$, then either $\sigma < 730$~yr (in which case $\mu$ is faster than the cell division time~--- physically doubtful), or the silence must be broken.
+
+\subsection{Uncertainty intervals and the robustness of \texorpdfstring{$\sigma$}{σ}}
+\label{sec:intervals}
+
+The interval given below is \emph{not} a frequentist confidence interval (there is no sample statistics here) but a \emph{plausibility range}, obtained by propagating the uncertainty of the input parameters through the relations $\mu=\sigma^2/(c_v^2T)$ and $N=c_v^2(T/\sigma)^2$. It is \emph{conditional}: it is set at a population $n\in[10^4,10^5]$ (the intersection of the Scherf--Lammer astrophysical estimate, Sec.~\ref{sec:kepler}, and the range allowed by silence, Table~2) and $c_v\approx1$ (Sec.~\ref{sec:mu_from_sigma}).
+
+\textbf{The weak dependence of $\sigma$ on $n$ is a key property.} The bound $\sigma(n)$ from silence (Table~2) is \emph{strongly sublinear}: a tenfold change of the population (from $10^4$ to $10^5$) changes $\sigma$ by only $\approx1.7$ times (from $1290$ to $775$~yr), whereas $\mu$ and $N$ change by $\approx2.8$ times (as $\sigma^2$). Therefore even a crude uncertainty in the population does \emph{not} loosen the estimate of $\sigma$: the dispersion of exit times is fixed at the level of $\sim10^3$~yr almost independently of exactly how many planets follow the critical path. This also makes the prediction $\mu\sim40$~min robust~--- it remains in the window of microbial division ($20$--$60$~min) for any plausible $n$.
+
+\begin{center}
+\textbf{Table 4.} Plausibility intervals at $n\in[10^4,10^5]$, $c_v\approx1$, $T=1.38\times10^{10}$~yr.
+
+\medskip
+\begin{tabular}{lccc}
+\toprule
+Parameter & Center & Range & Main source \\
+\midrule
+$\sigma$ & $1000$~yr & $800$--$1400$~yr & population $n$ \\
+$\mu$ & $40$~min & $25$--$75$~min & $\sigma$ (as $\sigma^2$) \\
+$N$ & $1.9\times10^{14}$ & $(1.0$--$2.9)\times10^{14}$ & $\sigma$ (as $\sigma^{-2}$) \\
+$\ell$ & $330$~ly & $220$--$470$~ly & population $n$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Implication for SETI}
+\label{sec:seti}
+
+Statistical synchronization changes the framing of the question. Usually the Fermi silence is interpreted in one of two extremes: either we are alone (or extremely rare), or other civilizations are significantly older and have overtaken us. The model offers a third answer: \textbf{most civilizations emerge at approximately the same time}, because the concentration of the sum of a large number of steps compresses the spread to $\sigma \sim 10^3$~yr~--- negligibly small on the scale of the Universe's lifetime, so that no civilization turns out to be significantly ``older'' than the rest. Hence a different interpretation of SETI: other technological civilizations, if they exist, are with high probability at a \emph{comparable} stage~--- that is, they are \textbf{potential competitors}, not beacons; the silence is explained not by the absence or remoteness of others but by the fact that they all appeared recently (by cosmic standards) and have not yet reached a detectable level. SETI strategies oriented toward the search for signals of significantly more advanced civilizations may turn out to be fundamentally mistaken.
+
+%%% ===================================================================
+\section{Predictions and falsifiability}
+\label{sec:predictions}
+%%% ===================================================================
+
+\textit{This section formulates testable predictions of the model along several independent fronts; each is placed in a separate subsection with an explicit falsification condition.}
+
+\subsection{Eukaryogenesis (the decisive test)}
+\label{sec:eukaryo}
+
+The hypothesis that the eukaryotic cell on Earth arose once over $\sim 2$~Gyr puts eukaryogenesis forward as the main candidate for a unique slow ``hard step'' and the sharpest test of the model. The counter-thesis: this is not a leap but a long syntrophic chain of high-probability substeps~--- Asgard archaea with eukaryotic signatures~\cite{Spang2015,Zaremba2017}, the cultured \emph{Ca.}~Prometheoarchaeum syntrophicum (the E3 model: Entangle--Engulf--Endogenize)~\cite{Imachi2020}, the syntrophic and hydrogen hypotheses~\cite{LopezGarcia2020,Martin1998}, actin homologs in Lokiarchaeota~\cite{Spang2015}, the observed actin cytoskeleton in an Asgard archaeon~\cite{Rodrigues2023}, the dominant contribution of the Asgard archaea, and the step-by-step FECA$\to$LECA transition~\cite{Tobiasson2026,Speijer2025,BravoArevalo2025}. Then the duration of $\sim 2$~Gyr is the length of the chain, not a single hard step; there is as yet no complete mechanistic model, so the test remains \emph{open}. \emph{Falsification:} if even a single link turns out to be robustly indecomposable, unique, and slow~--- not passable faster than $\sim 10^3$~yr even when the whole population of lineages evolving in parallel is taken into account (a parallel search does not accelerate it)~--- this gives a large spread of exit times and destroys synchrony.
+
+\subsection{Planet age and the stage of life}
+\label{sec:pred_planet_age}
+
+The attained stage of the evolution of life grows monotonically with the time spent on the critical path, and therefore correlates with the age of the planet. On planets \emph{older} than Earth (the cohort that started without a break, Sec.~\ref{sec:bimodal}), given a surplus of resources and conditions sufficient for the critical path (Sec.~\ref{sec:resource_threshold}, Sec.~\ref{sec:plateau}; present-day Mars is not included here), life, if it exists, can no longer be at the simple unicellular stage: over a time no less than Earth's it has passed through it and reached complex, technological forms. By virtue of synchrony (Sec.~\ref{sec:seti}), such planets are not epochs ahead but within $\sigma \sim 10^3$~yr of our level. Conversely, simple unicellular life is expected \emph{only} on planets substantially \emph{younger} than Earth~--- formed after the threshold C* had already been reached and therefore lagging behind the synchronized peak (Sec.~\ref{sec:bimodal}), which are now in the early phase of the path. \emph{Falsification:} the discovery of a rich \emph{simple} (microbial, pre-civilizational) biosphere on an Earth-like planet noticeably older than Earth, with a surplus of resources and the same necessary conditions~--- without signs of advancement toward complexity~--- would contradict the monotonicity and synchrony of the critical path.
+
+\subsection{Convergent form of civilization}
+\label{sec:pred_convergent_form}
+
+The critical path sets the fastest trajectory through the space of complexity \emph{by total time} (Sec.~\ref{sec:uniqueness}); together with convergent evolution (Sec.~\ref{sec:ltee}) this entails, as a \emph{logical consequence}, not only synchrony of times but also a \emph{partial} convergence of the \emph{form of civilization} (Sec.~\ref{sec:time_form}): technological civilizations on other planets are \emph{expectedly} converging toward a reproducible \emph{functional} plan of the biological carrier~--- manipulator limbs, a large social brain, tool use~--- that is, toward humanoids of our type, rather than toward reptilian-dinosaurian or fundamentally different scenarios. \emph{The scope of the claim.} Only the leading line toward technological intelligence is convergent (Sec.~\ref{sec:uniqueness}), not the whole biosphere: the accompanying flora and fauna on other planets may be arbitrarily different~--- the prediction concerns only the biological carrier of the civilization and its ancestral line, not the composition of the ecosystem. \emph{Confirmation:} the discovery on another planet of a technological civilization with a carrier of functionally humanoid type~--- and at the same time \emph{no one} significantly more advanced~--- would confirm the convergence of civilization form and the synchrony of times ($\sigma \sim 10^3$~yr, when no civilization has gone ahead by cosmological intervals). It is precisely the combination of these two conditions~--- ``the same functional form of civilization'' and ``no one has gotten ahead''~--- that distinguishes our prediction from scenarios in which other civilizations are either of a fundamentally different form or significantly older and more advanced than we are (Sec.~\ref{sec:seti}). \emph{Falsification:} the discovery of a technological civilization on a fundamentally different evolutionary-morphological basis; the discovery of a civilization significantly more advanced than ours would destroy the synchrony thesis.
+
+\subsection{The Kardashev climb to Type~II (our future)}
+\label{sec:pred_kardashev}
+
+The entry into the ``loud'' stage proceeds through sustained exponential growth of energy consumption (historically $\sim 1.5$--$3\%$ per year) and reaches Type~II in $t_{\mathrm{loud}} \sim 10^3$~yr (Sec.~\ref{sec:loud_time}). The model treats this as a \emph{typical} outcome of the critical path and thereby predicts our own future~--- the continuation of the climb Type~I\,$\to$\,II on a horizon of $\sim 10^3$~yr (simultaneously a premise about the ``loudness'' of civilizations and a time-testable consequence; the forward forecast~--- Sec.~\ref{sec:open_loud}; galactic competition after Type~II~--- Sec.~\ref{sec:galactic_competition}). \emph{Falsification:} a sustained deviation of the trajectory from such growth~--- a long plateau, a decline, a ``great filter'' below Type~II for us and for the observed civilizations~--- deprives $t_{\mathrm{loud}}$, the inversion ``silence $\to \sigma$,'' and the very premise of the silence argument of their force.
+
+\subsection{Detectability of Type~I}
+\label{sec:pred_type1}
+
+The silence argument (Sec.~\ref{sec:silence_sigma}) is calibrated at the Type~II threshold ($P_{\mathrm{II}} = 10^{26}$~W, $t_{\mathrm{loud}} \approx 990$~yr at $3\%$/yr); at it $\mathbb{E}[V] \lesssim 1$, and the observed zero of loud signals is plausible. The same integral with $t_{\mathrm{loud}}$ replaced by the time to Type~I ($P_{\mathrm{I}} = 10^{16}$~W; Table~1: $t_{\mathrm{I}} \approx 210$~yr at $3\%$/yr) and the same $\sigma$ from Table~2 gives a \emph{conditional} prediction: if one builds an instrument capable of detecting Type~I civilizations interstellarly (a technosphere with a planet's energy budget), then at $n \sim 10^4$--$10^5$ and the reference parameters ($n \approx 2.9\times10^4$, $\sigma \approx 990$~yr) the expected number of already-visible neighbors is $\mathbb{E}[V_{\mathrm{I}}] \approx 5$, range $\approx 3$--$9$; the probability of detecting \emph{at least one} is $\approx 1 - e^{-\mathbb{E}[V_{\mathrm{I}}]} \gtrsim 99\%$. The visibility condition is the same: a lead of no less than $t_{\mathrm{I}} + s$ (reaching Type~I plus the light travel). This is \emph{not} a claim that Type~I is already interstellar-detectable under current SETI conceptions, but a consequence of the cohort's synchrony: the fraction of neighbors that have outpaced us by $t_{\mathrm{I}}$ is large, but only the nearby ones fall within the light cone; at the Type~II threshold such neighbors are $\lesssim 1$. \emph{Falsification:} a systematic all-galactic survey with sensitivity to Type~I, covering the GHZ, finds \emph{not a single} civilization~--- while $n \sim 10^4$--$10^5$ is maintained, this contradicts the model.
+
+%%% ===================================================================
+\section{Open questions}
+\label{sec:open}
+%%% ===================================================================
+
+\textit{This section systematizes the loaded assumptions, simplifications, and unresolved questions of the model; each subsection is referenced explicitly from the main text.}
+
+\subsection{The subgenerational tick in the multicellular phase}
+\label{sec:macro_tempo}
+
+The reduction of the multicellular phase's contribution to $\sigma \sim 10^3$~yr via $\mu_{\mathrm{eff}}$ and subgenerational channels~--- Sec.~\ref{sec:sex}. The open question is the quantitative share of the subgenerational channels (learning, culture, the Baldwin effect) in Phanerozoic complexity; the test is the rates of convergent macroevolution and the role of plasticity in directing genetic fixation.
+
+\subsection{Unified complexity clocks}
+\label{sec:unified_clocks}
+
+The functional genome (Sharov), the assembly index MA, and the free-energy rate density $\Phi_m$ (Chaisson) describe one critical path from the informational and energetic sides (Sec.~\ref{sec:complexity_clocks}), but reconciling their tempos across phases (abiotic, biology, technosphere) is nontrivial. A promising task is to build consistent three-component ``complexity clocks'' from the Big Bang to civilization: an explicit conversion between $\log N$, $\log \mathrm{MA}$, and $\log \Phi_m$, a calibration of the per-phase tempos, and a check of how much such a scale improves the single-phase model of the sum of stages with a single averaged tick (Sec.~\ref{sec:mu_from_sigma}). The present work deliberately uses the simplification; a full unification is a task for future research.
+
+\subsection{The start of the critical path}
+\label{sec:open_start}
+
+In this work, for the total time $T$ the count is taken from the CMB thermal gate (Sec.~\ref{sec:common_start}, $\sim 10$--$17$~Myr~\cite{Loeb2014}); an alternative is the material gate of the first stars~\cite{Naoz2006} ($\sim 30$~Myr after the Big Bang for the first observable star). It remains open which of these events~--- or a later one~--- should be counted as the true common start of the critical path.
+
+\subsection{The rate of prebiotic steps}
+\label{sec:open_prebiotic_tempo}
+
+Laboratory replicators (von Kiedrowski template ligation, peptide replicators, systems chemistry) replicate predominantly \emph{parabolically} rather than exponentially, owing to product inhibition~\cite{Adamski2020}~--- which is consistent with prebiotic steps being slower and noisier; but the data do not yet give a clean universal step time for this stage.
+
+\subsection{The complexity level C*}
+\label{sec:open_cstar_level}
+
+What level of complexity exactly does C* denote? In Sec.~\ref{sec:local_conv} the threshold is set \emph{functionally}~--- below it open-space evolution is stable, above it planetary conditions are required; it is established only that C* is \emph{below} a full cell, but not by how much. There is no independent calibration by genome ($G$), assembly index (MA), $\Phi_m$, or the number of elementary steps to the first cell; JCVI-syn3.0 and Sharov's scale in Sec.~\ref{sec:freeze} set only a \emph{rough upper} estimate. As long as C* is not tied to a measurable structure, the energetic comparisons with a dust grain and the chronology of the ``freezing'' before the first cell remain qualitative.
+
+\subsection{``Freezing'' of the cosmic phase at C*}
+\label{sec:open_freeze}
+
+What exactly stops further complexification above C* in open space is not established. In Sec.~\ref{sec:freeze} a working hypothesis is adopted~--- a barrier of the conditions of the medium (a liquid-phase medium, a resource pool, a sustained flux of free energy), rather than a global deficit of free energy or a ``cooling'' of the Universe; the alternatives (a chemical ceiling of replication, the instability of protocells in vacuum, other mechanisms) are not disentangled.
+
+\subsection{Carriers of prebiotic chemistry}
+\label{sec:open_carriers}
+
+Where in the cosmic phase the complexity up to the threshold C* accumulates~--- in molecular clouds, dust (IDPs), on comets, or in meteorites~--- has not been finally established; probably it is not a matter of a single static carrier but of a \emph{chain} of sites. To answer this, one must work through a \emph{comprehensive multimodal} process: the accumulation and transfer of complexity between types of carriers, accounting for the lifetime of each (the fading of local energy sources, the destruction of grains, the sublimation of ice, ablation upon delivery to a planet) and the change of carriers~--- from molecular clouds through the protoplanetary disk to comets, interplanetary dust, and, finally, to the planetary surface (Sec.~\ref{sec:idp_dust}, Sec.~\ref{sec:bimodal}). As long as this chain is not modeled quantitatively, the distinction between the carriers of accumulation and the carrier of delivery remains qualitative; the model's working hypothesis is Sec.~\ref{sec:idp_dust}.
+
+\subsection{Convergence of the form of civilization}
+\label{sec:open_civ_form}
+
+The spectrum ``humanoid of functional type $\leftrightarrow$ \emph{Homo sapiens} up close'' and the bounds that the $\sigma$ ``tube'' imposes on it are discussed in Sec.~\ref{sec:time_form}. Briefly: from the model there \emph{follows} a functional plan of a humanoid carrier of civilization (Sec.~\ref{sec:time_form}), but no coincidence with terrestrial morphology is asserted; the open question is \emph{where} on the spectrum the real form will fall: it may be close to us, or may differ greatly in morphology and technosphere. The empirical support is only convergent evolution (Sec.~\ref{sec:ltee}); falsification~--- Sec.~\ref{sec:pred_convergent_form}.
+
+\subsection{The loudness threshold and \texorpdfstring{$t_{\mathrm{loud}}$}{t\_loud}}
+\label{sec:open_loud}
+
+``Loudness'' is identified with Type~II on the Kardashev scale (Sec.~\ref{sec:loud_time}); the threshold is borrowed from the SETI literature~\cite{Wright2014,Hanson2021}. The open question is how well this threshold corresponds to real detectability and whether the same threshold applies to Type~I ($10^{16}$~W). Forward forecasts: the typical climb Type~I\,$\to$\,II in $t_{\mathrm{loud}} \sim 10^3$~yr (Sec.~\ref{sec:loud_time}, Sec.~\ref{sec:pred_kardashev}) and the conditional number $\mathbb{E}[V_{\mathrm{I}}] \approx 5$ of visible neighbors under hypothetical Type~I detectability (Sec.~\ref{sec:pred_type1}); the sensitivity of $t_{\mathrm{loud}}$ and $t_{\mathrm{I}}$ to the energy-consumption growth rate~--- Table~1.
+
+\subsection{Galactic competition}
+\label{sec:galactic_competition}
+
+In the model there are $n \sim 10^4$--$10^5$ civilizations of the synchronized cohort in our galaxy (Sec.~\ref{sec:kepler}). The open question is how, after Type~II, we will compete for the transition to Type~III.
+
+\bibliographystyle{unsrt}
+\bibliography{refs}
+
+\end{document}
