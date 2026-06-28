@@ -2,7 +2,7 @@
 
 A theoretical, interdisciplinary preprint that proposes a new resolution of the **Fermi paradox** — not "we are alone" and not "others are far ahead," but **synchronization**: most civilizations emerge at approximately the same cosmic time.
 
-**Author:** Oleg Ponfilenok (independent researcher) · ponfil@gmail.com
+**Author:** Oleg Ponfilenok (independent researcher)
 
 ---
 
@@ -64,17 +64,6 @@ pdflatex critical_path_evolution_ru
 ```
 
 The two passes after `bibtex` resolve citations and cross-references.
-
-## Citation
-
-```bibtex
-@unpublished{Ponfilenok_CriticalPath,
-  author = {Oleg Ponfilenok},
-  title  = {The Critical Path of Evolution},
-  note   = {Working paper},
-  year   = {2026}
-}
-```
 
 ## Status
 
