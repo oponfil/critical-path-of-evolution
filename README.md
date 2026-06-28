@@ -1,8 +1,12 @@
 # The Critical Path of Evolution
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21008110.svg)](https://doi.org/10.5281/zenodo.21008110)
+
 A theoretical, interdisciplinary preprint that proposes a new resolution of the **Fermi paradox** — not "we are alone" and not "others are far ahead," but **synchronization**: most civilizations emerge at approximately the same cosmic time.
 
 **Author:** Oleg Ponfilenok (independent researcher)
+
+**Preprint:** [Zenodo (v1, 2026)](https://zenodo.org/records/21008110) · DOI [10.5281/zenodo.21008110](https://doi.org/10.5281/zenodo.21008110)
 
 ---
 
@@ -67,6 +71,6 @@ The two passes after `bibtex` resolve citations and cross-references.
 
 ## Status
 
-Working preprint — a hypothesis paper spanning cosmology, non-equilibrium thermodynamics, population genetics, astrobiology, and SETI. Feedback and criticism are welcome.
+Published preprint (v1, June 2026) on [Zenodo](https://zenodo.org/records/21008110). A hypothesis paper spanning cosmology, non-equilibrium thermodynamics, population genetics, astrobiology, and SETI. Feedback and criticism are welcome.
 
-© 2026 Oleg Ponfilenok. All rights reserved.
+Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). © 2026 Oleg Ponfilenok.
